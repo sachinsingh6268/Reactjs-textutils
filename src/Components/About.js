@@ -1,34 +1,40 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-function About() {
+function About(props) {
 
-    const myCSS = {
-        backgroundColor: "white",
-        color: "black",
-        border:"1px white solid"
+    // const myCSS = {
+    //     backgroundColor: "white",
+    //     color: "black",
+    //     border:"1px white solid"
+    // }
+
+    // const [btnText,setbtnText] = useState("Enable Dark Mode");
+    // const [myStyle,setMyCSS] = useState(myCSS);
+
+    const myStyle = {
+        backgroundColor:props.mode === 'dark'?'grey':'white',
+        color:props.mode === 'dark'?'white':'grey'
     }
 
-    const [btnText,setbtnText] = useState("Enable Dark Mode");
-    const [myStyle,setMyCSS] = useState(myCSS);
+    // const toggleMode = ()=>{
+    //     if(myStyle.color === "black"){
+    //         setMyCSS({
+    //             backgroundColor: "black",
+    //             color: "white"
 
-    const toggleMode = ()=>{
-        if(myStyle.color === "black"){
-            setMyCSS({
-                backgroundColor: "black",
-                color: "white"
+    //         })
+    //         setbtnText("Enable Light Mode");
+    //     }
+    //     else{
+    //         setMyCSS({
+    //             backgroundColor: "white",
+    //             color: "black",
+    //             border:"1px white solid"
+    //         })
+    //         setbtnText("Enable Dark Mode");
+    //     }
+    // }
 
-            })
-            setbtnText("Enable Light Mode");
-        }
-        else{
-            setMyCSS({
-                backgroundColor: "white",
-                color: "black",
-                border:"1px white solid"
-            })
-            setbtnText("Enable Dark Mode");
-        }
-    }
     return (
         <>
             <div className="accordion" id="accordionExample" style={myStyle}>
@@ -70,7 +76,6 @@ function About() {
                     </div>
                 </div>
             </div>
-            <button className="btn btn-primary" onClick={toggleMode}>{btnText}</button>
         </>
     );
 }

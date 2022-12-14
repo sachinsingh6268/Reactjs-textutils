@@ -25,17 +25,6 @@ function Navbar(props) {
                 </div>
             </div>
 
-            {/* <div className="btn-group mx-2" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autocomplete="off"/>
-                <label className="btn btn-outline-primary" htmlFor="btnradio1">Green</label>
-
-                <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
-                <label className="btn btn-outline-primary" htmlFor="btnradio2">Red</label>
-
-                <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
-                <label className="btn btn-outline-primary" htmlFor="btnradio3">Blue</label>
-            </div> */}
-
             <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                 <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`Enable ${props.mode === 'light' ? 'dark' : 'light'} Mode`}</label>
